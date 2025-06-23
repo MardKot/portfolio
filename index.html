@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio - Mardochée</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Mardochée KOTIN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --main-color: #4a90e2;
-      --bg-color: #f5f5f5;
-      --text-color: #333;
+      --primary: #2d89ef;
+      --bg: #f4f7fa;
+      --text: #333;
+      --card-bg: #fff;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      animation: fadeIn 1.2s ease;
     }
 
     header {
-      background: var(--main-color);
+      background: var(--primary);
       color: white;
-      padding: 2rem 0;
+      padding: 2rem;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     header h1 {
       font-size: 2.5rem;
+      font-weight: 800;
     }
 
     header p {
@@ -46,46 +50,65 @@
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 1rem;
       background: white;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      padding: 1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav a {
       text-decoration: none;
-      color: var(--text-color);
-      font-weight: 500;
+      color: var(--text);
+      font-weight: 600;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: var(--main-color);
+      color: var(--primary);
     }
 
     .section {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 0 2rem;
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 2rem;
     }
 
     .section h2 {
       font-size: 2rem;
-      color: var(--main-color);
       margin-bottom: 1rem;
-      border-left: 5px solid var(--main-color);
-      padding-left: 1rem;
+      color: var(--primary);
+      position: relative;
+    }
+
+    .section h2::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      max-width: 700px;
     }
 
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
     .card {
-      background: white;
-      padding: 1rem;
+      background: var(--card-bg);
       border-radius: 10px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+      padding: 1.5rem;
       transition: transform 0.3s ease;
     }
 
@@ -98,22 +121,51 @@
       color: #222;
     }
 
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    .contact p, .contact a {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .icons a {
+      color: var(--text);
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .icons a:hover {
+      color: var(--primary);
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
-      background: #333;
+      background: #222;
       color: white;
-      margin-top: 3rem;
+      margin-top: 2rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .section h2 {
-        font-size: 1.5rem;
-      }
+      header h1 { font-size: 1.8rem; }
+      .section h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -121,7 +173,7 @@
 
   <header>
     <h1>Mardochée KOTIN</h1>
-    <p>Étudiant en Systèmes Informatiques et Logiciels</p>
+    <p>Étudiant en Systèmes Informatiques & Logiciels – Porto-Novo</p>
   </header>
 
   <nav>
@@ -130,40 +182,46 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section class="section" id="apropos">
+  <section class="section about" id="apropos">
     <h2>À propos</h2>
     <p>
-      Je suis un étudiant passionné par le développement web, la programmation et l’innovation logicielle. J’aime apprendre par la pratique, réaliser des projets et relever de nouveaux défis.
+      Passionné par le développement web et la technologie, je suis étudiant en 3ᵉ année de Systèmes Informatiques à Porto-Novo.
+      Mon objectif est de créer des solutions utiles, accessibles et performantes.
     </p>
   </section>
 
   <section class="section" id="projets">
-    <h2>Projets</h2>
+    <h2>Projets récents</h2>
     <div class="projects">
       <div class="card">
         <h3>Portfolio personnel</h3>
-        <p>Site web personnel réalisé en HTML/CSS pour présenter mes compétences et projets.</p>
+        <p>Site web responsive en HTML/CSS pour me présenter en ligne, hébergé via GitHub Pages.</p>
       </div>
       <div class="card">
-        <h3>Gestion Étudiants</h3>
-        <p>Mini application web de gestion des étudiants avec PHP & MySQL.</p>
+        <h3>Application de gestion scolaire</h3>
+        <p>Mini CRM pour établissements, avec PHP, MySQL et Bootstrap.</p>
       </div>
       <div class="card">
-        <h3>Bot Telegram météo</h3>
-        <p>Un bot simple en Python qui donne la météo locale.</p>
+        <h3>Bot météo (Telegram)</h3>
+        <p>Bot Python connecté à OpenWeatherMap, envoie la météo par ville.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="contact">
+  <section class="section contact" id="contact">
     <h2>Contact</h2>
-    <p>Email : mardochekotin@gmail.com</p>
-    <p>GitHub : <a href="https://github.com/MardKot" target="_blank">MardKot</a></p>
-    <p>LinkedIn : <a href="https://linkedin.com/in/mardkot" target="_blank">Kpagbé Mardochée KOTIN</a></p>
+    <p>Email : <a href="mailto:mardochekotin@gmail.com">mardochekotin@gmail.com</a></p>
+    <p>GitHub : <a href="https://github.com/MardKot" target="_blank">github.com/Mardkot</a></p>
+    <p>LinkedIn : <a href="https://linkedin.com/in/mardkot" target="_blank">linkedin.com/in/Kpagbé Mardochée Kotin</a></p>
+    <div class="icons" style="margin-top:1rem;">
+      <a href="mailto:mardochekotin@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/MardKot" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/mardkot" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 Mardochée KOTIN — Tous droits réservés
+    &copy; 2025 Mardochée KOTIN. Tous droits réservés.
   </footer>
 
 </body>
