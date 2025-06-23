@@ -58,6 +58,19 @@
       flex-direction: column;
     }
   }
+  .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 </style>
 </head>
 <body>
@@ -70,7 +83,7 @@
 </div>
 
 <div class="container">
-  <div class="left">
+  <div class="left fade-in">
     <h2>Objectif professionnel</h2>
     <p>Étudiant en 3ᵉ année de Systèmes Informatiques et Logiciels, passionné par le développement web et les technologies logicielles. Motivé à apprendre, développer des projets concrets, et contribuer à des environnements innovants.</p>
 
@@ -90,7 +103,7 @@
 
   </div>
 
-  <div class="right">
+  <div class="right fade-in">
     <h2>Projets personnels</h2>
     <ul>
       <li><strong>Portfolio personnel</strong> — <a href="https://github.com/MardKot/portfolio" target="_blank">GitHub</a></li>
